@@ -1,0 +1,10 @@
+.env/
+.vscode/
+datasets/
+__pycache__/
+log/
+logs/
+plots/*
+/datasets
+tmp/
+result_analysis/*
