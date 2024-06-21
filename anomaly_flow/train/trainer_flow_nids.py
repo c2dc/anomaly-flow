@@ -156,8 +156,6 @@ class GANomaly(Trainer):
             "enc_loss_weight",
         }
 
-    # TODO: Verificar o anomaly threshold apenas com dados normais
-    # TODO: Eu estava pegando o anomaly threshold com dados de validação
     def train(
         self,
         epochs: int,
