@@ -1,3 +1,26 @@
+# This file was modified to meet the necessary requirements of the Anomaly-Flow project,
+# which aims to apply the GANomaly model to detect DDoS attacks using network flows. 
+#
+# Modifications/Additions to this file are Copyright (c) Leonardo Melo 2024
+# and are licensed under the MIT license. 
+# You may obtain the full License description at 
+# 
+# https://github.com/c2dc/anomaly-flow/blob/main/LICENSE 
+#
+# Copyright 2021 Zuru Tech HK Limited. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 """
     NetflowV2 dataset, split to be used for anomaly detection.
 """
@@ -97,10 +120,10 @@ class NetFlowV2(AnomalyDetectionDataset):
         self.batch_size = 128
 
         # Clear unused variables
-        # del X_train
-        # del y_train
-        # del y_test
-        # del df
+        del X_train
+        del y_train
+        del y_test
+        del df
 
     @staticmethod
     def get_features_to_drop() -> list: 

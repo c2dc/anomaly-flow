@@ -1,3 +1,14 @@
+# This file was modified to meet the necessary requirements of the Anomaly-Flow project,
+# which aims to apply the GANomaly model to detect DDoS attacks using network flows. 
+#
+# Modifications/Additions to this file are Copyright (c) Leonardo Melo 2024
+# and are licensed under the MIT license. 
+# You may obtain the full License description at 
+# 
+# https://github.com/c2dc/anomaly-flow/blob/main/LICENSE 
+# 
+# When reusing the source code, follow the presented license notice and the original notice as shown below:
+#
 # Copyright 2021 Zuru Tech HK Limited. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
