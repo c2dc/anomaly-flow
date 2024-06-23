@@ -1,5 +1,7 @@
 # Anomaly-Flow
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Framework for implementing Intrusion Detection Systems (NIDS) aimed at identifying anomalies in network flows using Machine Learning models.
 
 ### Create the Experimental Environment
