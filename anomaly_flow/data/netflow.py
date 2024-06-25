@@ -9,6 +9,8 @@
 #
 # Copyright 2021 Zuru Tech HK Limited. All Rights Reserved.
 #
+# When reusing the source code, follow the presented license notice and the original notice as shown below:
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -65,17 +67,17 @@ class NetFlowV2(AnomalyDetectionDataset):
         
         print(f"Loaded dataset {self._dataset_name} [OK]")
 
-        # Pré processamento fazer one hot enconding de atributos descritivos
+        # Preprocessing to perform one-hot encoding of descriptive attributes
         print("Initialized Columns Split Preprocessing.")
         
         df = split_flag_columns(df)
         
         print("Finished Columns Split Preprocessing. [OK]")
 
-        # Remove features não utilizadas para o treinamento
+        # Remove unused features for training
         df.drop(NetFlowV2.get_features_to_drop(), axis=1, inplace=True)
 
-        # Pré processamento para remover valores muito grandes
+        # Preprocessing to remove very large values
         df.replace([np.inf, -np.inf], np.nan, inplace=True)
         threshold = np.finfo(np.float32).max
         df = df[df < threshold]
@@ -109,7 +111,7 @@ class NetFlowV2(AnomalyDetectionDataset):
         self.X_test = copy(X_test) 
         self.y_test = copy(y_test)
 
-        # Cria datasets compatíveis com o treinamento dentro do tensorflow
+        # Create compatible datasets with the internal tensorflow API
         self._train_raw = tf.data.Dataset.from_tensor_slices((X_train, y_train))
         self._test_raw = tf.data.Dataset.from_tensor_slices((X_test, y_test))
 
@@ -128,16 +130,14 @@ class NetFlowV2(AnomalyDetectionDataset):
     @staticmethod
     def get_features_to_drop() -> list: 
         """
-            Atributos que enviesam o modelo e devem ser removidos. 
-            IPV4_SRC_ADDR = Endereço de origem do fluxo de informação.
-            IPV4_DST_ADDR = Endereço de de destino de fluxo de informação. 
-            L7_PROTO = Protocolo da cama 7 de aplicação, específico para cada tipo de ataque DDoS. 
-            L4_SRC_PORT = Porta de origem do fluxo de comunicação. 
-            L4_DST_PORT = Porta de destino do fluxo de comunicação.
-            FTP_COMMAND_RET_CODE = Código de retorno do comando FTP. 
-            Attack = Label descritiva da classe do exemplo. 
-
-            Demais atributos que possam prejudicar o desempenho devem ser adicionados nesta classe. 
+            Attributes that bias the model and should be removed:
+            IPV4_SRC_ADDR = Source address of the information flow.
+            IPV4_DST_ADDR = Destination address of the information flow.
+            L7_PROTO = Layer 7 application protocol, specific to each type of DDoS attack.
+            L4_SRC_PORT = Source port of the communication flow.
+            L4_DST_PORT = Destination port of the communication flow.
+            FTP_COMMAND_RET_CODE = Return code of the FTP command.
+            Attack = Descriptive label of the example class. 
         """
         __features_to_drop = [
             'Unnamed: 0',
@@ -164,12 +164,8 @@ class NetFlowV2(AnomalyDetectionDataset):
     ) -> None:
         """Configure the dataset. This makes all the object properties valid (not None).
         Args:
-            batch_size: The dataset batch size.
             new_size: (L) of de the input flow used to train the model.
-            Verificar se esses pontos aqui precisam ser alterados
-            anomalous_label: If the raw dataset contains label, all the elements with
-                             "anomalous_label" are converted to element of
-                             self.anomalous_label class.
+            batch_size: The dataset batch size.
             shuffle_buffer_size: Buffer size used during the tf.data.Dataset.shuffle call.
             cache: If True, cache the dataset.
             drop_remainder: If True, when the dataset size is not a multiple of the dataset size,
@@ -194,7 +190,6 @@ class NetFlowV2(AnomalyDetectionDataset):
         is_anomalous = lambda _, label: tf.equal(label, anomalous_label)
         is_normal = lambda _, label: tf.not_equal(label, anomalous_label)
 
-        # Conclusão garantir que a validação contenha classes 0 e 1 !!!!!!
         per_class_dataset = [
             self._train_raw.filter(lambda _, y: tf.equal(y, label))
             for label in tf.range(self._num_classes, dtype=tf.float32)

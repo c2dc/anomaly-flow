@@ -59,7 +59,7 @@ def generate_anomaly_plot(labels, anomaly_scores, threshold, title, save_to_file
     
     plt.figure(figsize=(8, 6))
     ax = sns.displot(plot_df, x='anomaly_scores', hue="labels")
-    ax.set(title=f"Anomaly Scores \n {title}", ylim=(0, 10000), xlim=(0, max(anomaly_scores)))
+    ax.set(title=f"Anomaly Scores \n {title}", xlim=(0, max(anomaly_scores)), yscale='log')
     plt.axvline(threshold, color='k', linestyle='dashed', linewidth=1)
 
     if save_to_file is True:
