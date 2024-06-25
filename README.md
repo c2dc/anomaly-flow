@@ -1,5 +1,7 @@
 # Anomaly-Flow
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Framework for implementing Intrusion Detection Systems (NIDS) aimed at identifying anomalies in network flows using Machine Learning models.
 
 ### Create the Experimental Environment
@@ -49,7 +51,7 @@ In our case we used derived datasets containing only benign and DDoS samples fil
 
 ### Generating Synthetic Data
 
-To generate Synthetic Data for a specific dataset use the script "main.ipynb". 
+To generate Synthetic Data for a specific dataset use the script [main.ipynb](https://github.com/leonardohdemelo/anomaly-flow/blob/main/main.ipynb). 
 
 ### External models Simple Models Baseline
 
@@ -86,4 +88,16 @@ The following projects were used as reference for the preparation of this work:
 ## Authors 
 
 <a href="https://github.com/leonardohdemelo"><img src="https://avatars0.githubusercontent.com/u/43916660?s=460&v=4" alt="drawing" width="40" align="middle"/></a>
-Leonardo Henrique de Melo 
+&nbsp;&nbsp;&nbsp;Leonardo Henrique de Melo 
+
+<a href="https://github.com/gubertoli"><img src="https://avatars.githubusercontent.com/u/4803756?v=4" alt="drawing" width="40" align="middle"/></a>
+&nbsp;&nbsp;&nbsp;Gustavo de Carvalho Bertoli
+
+<a href="https://homepages.dcc.ufmg.br/~michele/"><img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4701867Y5" alt="drawing" width="40" align="middle"/></a>
+&nbsp;&nbsp;&nbsp;Michele Nogueira
+
+<a href="https://dcc.ufmg.br/professor/aldri-luiz-dos-santos/"><img src="https://dcc.ufmg.br/wp-content/uploads/2021/01/Aldri.jpg" alt="drawing" width="40" align="middle"/></a>
+&nbsp;&nbsp;&nbsp;Aldri Luiz dos Santos
+
+<a href="https://github.com/ljr"><img src="https://avatars.githubusercontent.com/u/978047?v=4" alt="drawing" width="40" align="middle"/></a>
+&nbsp;&nbsp;&nbsp;Lourenço Alves Pereira Junior
