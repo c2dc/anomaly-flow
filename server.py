@@ -14,7 +14,7 @@ hps = dict()
 with open('hps.json', 'r', encoding='utf-8') as file:
     hps = json.load(file)
 
-NUM_ROUNDS = 3
+NUM_ROUNDS = 10
 
 def average_metrics(metrics):
     """
