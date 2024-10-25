@@ -74,7 +74,7 @@ chmod +x ./auxiliary_scripts/install-efc.sh
 The baselines for a multi-domain DDoS detection using federated learning are available here:
 - [Autoencoder](https://github.com/c2dc/fl-unsup-nids/tree/anomaly-flow-baseline)
 - [Logistic Regression](https://github.com/c2dc/fl-ids-globecom2022)
-- GANomaly
+- [FLAD](https://github.com/leonardohdemelo/flad-baseline)
 
 ## References 
 
