@@ -13,7 +13,7 @@ python -m venv .env
 ```
 
 **Note: The virtual environment must have this name because the scripts use this name to load the needed libraries.**
-
+fl-unsup-nids/blob/anomaly-flow-baseline/utils/load_data.py
 After creating the Virtual environment, use the following command to install the necessary python packages: 
 
 ```sh
@@ -70,6 +70,11 @@ chmod +x ./auxiliary_scripts/install-efc.sh
 ```sh
 ./auxiliary_scripts/install-efc.sh
 ```
+## Baselines
+The baselines for a multi-domain DDoS detection using federated learning are available here:
+- [Autoencoder](https://github.com/c2dc/fl-unsup-nids/tree/anomaly-flow-baseline)
+- [Logistic Regression](https://github.com/c2dc/fl-ids-globecom2022)
+- GANomaly
 
 ## References 
 
@@ -101,3 +106,8 @@ The following projects were used as reference for the preparation of this work:
 
 <a href="https://github.com/ljr"><img src="https://avatars.githubusercontent.com/u/978047?v=4" alt="drawing" width="40" align="middle"/></a>
 &nbsp;&nbsp;&nbsp;Lourenço Alves Pereira Junior
+
+# Cite this work
+```
+
+```
