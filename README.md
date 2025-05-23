@@ -4,6 +4,8 @@
 
 Framework for implementing Intrusion Detection Systems (NIDS) aimed at identifying anomalies in network flows using Machine Learning models.
 
+- Reference paper: [Anomaly-Flow: A Multi-domain Federated Generative Adversarial Network for Distributed Denial-of-Service Detection](https://ieeexplore.ieee.org/document/10988602)
+
 ### Create the Experimental Environment
 
 To create the experimental environment, execute the following commands: 
@@ -109,5 +111,14 @@ The following projects were used as reference for the preparation of this work:
 
 # Cite this work
 ```
-
+@ARTICLE{anomalyflow,
+  author={De Melo, Leonardo Henrique and Bertoli, Gustavo de Carvalho and Nogueira, Michele and Dos Santos, Aldri Luiz and Pereira, Lourenço Alves},
+  journal={IEEE Network}, 
+  title={Anomaly-Flow: A Multi-domain Federated Generative Adversarial Network for Distributed Denial-of-Service Detection}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/MNET.2025.3567251}
+}
 ```
